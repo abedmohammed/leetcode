@@ -6,4 +6,17 @@ class ListNode(object):
 
 class Solution(object):
     def mergeTwoLists(self, list1, list2):
-        while(list1 )
+        entry = ListNode()
+        current = entry
+        while(list1 and list2):
+            if list1.value < list2.value:
+                current.next = list1
+                list1 = list1.next
+            else:
+                current.next = list2
+                list2 = list2.next
+            current = current.next
+        
+        current.next = list1 or list2
+        return entry.next
+                
