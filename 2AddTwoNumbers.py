@@ -59,20 +59,16 @@ class Solution(object):
         head = ListNode()
         current = head
         while(l1 or l2):
-            sum = 0
-            if(l1 and l2):
-                sum = l1.val + l2.val + carry
-                l1 = l1.next
-                l2 = l2.next
-            elif(l1 and not l2):
-                sum = l1.val + carry
-                l1 = l1.next
-            elif(l2 and not l1):
-                sum = l2.val + carry
-                l2 = l2.next
 
+            value1 = l1.val if l1 else 0
+            value2 = l2.val if l2 else 0
+            
+            sum = value1 + value2 + carry
             value = sum%10
             carry = sum//10
+
+            l1 = l1.next if l1 else None
+            l2 = l2.next if l2 else None
 
             current.next = ListNode(value)
             current = current.next
