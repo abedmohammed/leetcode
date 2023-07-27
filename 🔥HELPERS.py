@@ -28,7 +28,7 @@ l2 = createList([1, 4, 7])
 printList(answer.addTwoNumbers(l1, l2))
         
 ############################### 
-# PRINT SOLUTION
+# PRINT SOLUTIONs
 ############################### 
 
 answer = Solution()
