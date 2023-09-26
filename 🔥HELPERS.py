@@ -1,5 +1,4 @@
-
-############################### 
+###############################
 # TREES
 ###############################
 class TreeNode(object):
@@ -28,6 +27,7 @@ class TreeNode(object):
             return
         self.right = TreeNode(val)
 
+
 tree = TreeNode(6)
 tree.insert(2)
 tree.insert(8)
@@ -41,24 +41,28 @@ tree.insert(5)
 answer = Solution()
 answer.inOrder(tree)
 
-############################### 
+
+###############################
 # LINKED LISTS
-############################### 
+###############################
 def createList(array):
     head = ListNode(0)
     current = head
-    
+
     for val in array:
         node = ListNode(val)
         current.next = node
         current = current.next
-    
+
     return head.next
 
+
 def printList(head):
+    if not head:
+        return
     current = head
     string = ""
-    while(current.next):
+    while current.next:
         string += str(current.val) + " -> "
         current = current.next
     string += str(current.val)
@@ -69,10 +73,10 @@ answer = Solution()
 l1 = createList([5, 6, 4])
 l2 = createList([1, 4, 7])
 printList(answer.addTwoNumbers(l1, l2))
-        
-############################### 
+
+###############################
 # PRINT SOLUTIONs
-############################### 
+###############################
 
 answer = Solution()
 print(answer.LEETCODEQUESTION())
