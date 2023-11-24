@@ -45,6 +45,13 @@ answer.inOrder(tree)
 ###############################
 # LINKED LISTS
 ###############################
+# Definition for singly-linked list.
+class ListNode(object):
+    def __init__(self, val=0, next=None):
+        self.val = val
+        self.next = next
+
+
 def createList(array):
     head = ListNode(0)
     current = head
