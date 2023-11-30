@@ -1,11 +1,14 @@
 class Solution(object):
     def minimumOneBitOperations(self, n):
-        if n <= 1:
-            return n
-        count = 0
-        while (1 << count) <= n:
-            count += 1
-        return ((1 << count) - 1) - self.minimumOneBitOperations(n - (1 << (count - 1)))
+        if n == 0:
+            return 1
+
+        k = 0
+        while 2**k <= n:
+            k += 1
+        k -= 1
+
+        return 2 ** (k + 1) - 1 - self.minimumOneBitOperations(2**k ^ n)
 
 
 answer = Solution()
