@@ -8,25 +8,26 @@ class TreeNode(object):
 
 class Solution(object):
     def kthSmallest(self, root, k):
-        def inOrderDFS(node, curPositon, k):
-            if not node:
-                return (False, 0)
+        # inorder = []
 
-            leftDFS = inOrderDFS(node.left, curPositon, k)
-            if leftDFS[0] == True:
-                return leftDFS
-            else:
-                curPosition += leftDFS[1] + 1
+        # def inOrderDFS(node):
+        #     if not node:
+        #         return
 
-            if curPositon == k:
-                return (True, node.val)
+        #     inOrderDFS(node.left)
+        #     inorder.append(node.val)
+        #     inOrderDFS(node.right)
 
-            rightDFS = inOrderDFS(node.right, curPositon, k)
-            if rightDFS[0] == True:
-                return rightDFS
-            else:
-                curPositon += rightDFS[1]
+        # inOrderDFS(root)
+        # return inorder[k - 1]
 
-            return (False, curPositon)
-
-        return inOrderDFS(root, 0, k)[1]
+        stack = []
+        while True:
+            while root:
+                stack.append(root)
+                root = root.left
+            root = stack.pop()
+            k -= 1
+            if k == 0:
+                return root.val
+            root = root.right
