@@ -8,6 +8,7 @@ class Solution(object):
                 row.append(matrix[i][j])
             ans.append(row)
             row = []
+            
 
         return ans
 
