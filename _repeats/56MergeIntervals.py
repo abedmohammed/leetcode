@@ -4,8 +4,7 @@ class Solution(object):
         res = []
         currInterval = intervals[0]
 
-        for i in range(1, len(intervals)):
-            start, end = intervals[i]
+        for start, end in intervals[1:]:
             curStart, curEnd = currInterval
 
             if start <= curEnd:
