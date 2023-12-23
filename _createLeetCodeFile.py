@@ -1,4 +1,4 @@
-questionName = "1422. Maximum Score after Splitting a String"
+questionName = "1496. Path Crossing"
 
 questionName = questionName.title().split()
 questionName[0] = questionName[0][:-1]
