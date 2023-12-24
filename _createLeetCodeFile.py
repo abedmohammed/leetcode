@@ -1,4 +1,4 @@
-questionName = "1496. Path Crossing"
+questionName = "1758. Minimum Changes To Make Alternating Binary String"
 
 questionName = questionName.title().split()
 questionName[0] = questionName[0][:-1]
