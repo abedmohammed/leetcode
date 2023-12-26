@@ -1,4 +1,4 @@
-questionName = "1758. Minimum Changes To Make Alternating Binary String"
+questionName = "1155. Number of Dice Rolls With Target Sum"
 
 questionName = questionName.title().split()
 questionName[0] = questionName[0][:-1]
