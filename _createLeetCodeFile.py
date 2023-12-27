@@ -1,4 +1,5 @@
-questionName = "1155. Number of Dice Rolls With Target Sum"
+print("Question Name: ", end="")
+questionName = input()
 
 questionName = questionName.title().split()
 questionName[0] = questionName[0][:-1]
