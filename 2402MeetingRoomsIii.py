@@ -8,7 +8,6 @@ class Solution(object):
         rooms = [0] * n
         endHeap = []
         roomHeap = [i for i in range(n)]
-        heapq.heapify(roomHeap)
 
         for start, end in meetings:
             # check if meetings finished before this starts
