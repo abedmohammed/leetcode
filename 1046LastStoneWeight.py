@@ -1,18 +1,15 @@
-import heapq
-
-
 class Solution(object):
-    def lastStoneWeight(self, stones):
-        maxHeap = [-stones[i] for i in range(len(stones))]
-        heapq.heapify(maxHeap)
+    def minCostClimbingStairs(self, cost):
+        costTwoStep, costOneStep = 0, 0
 
-        while len(maxHeap) > 1:
-            rock1 = heapq.heappop(maxHeap)
-            rock2 = heapq.heappop(maxHeap)
+        cur = 2
 
-            if rock1 == rock2:
-                continue
+        while cur < len(cost):
+            temp = costOneStep
 
-            heapq.heappush(maxHeap, rock1 - rock2)
+            costOneStep = min(costOneStep + cost[cur - 1], costTwoStep + cost[cur - 2])
+            costTwoStep = temp
 
-        return -heapq.heappop(maxHeap) if len(maxHeap) == 1 else 0
+            cur += 1
+
+        return min(costOneStep + cost[cur - 1], costTwoStep + cost[cur - 2])
